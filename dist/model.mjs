@@ -34,18 +34,26 @@ export function calculate(height, weight, mode = 'image1') {
   if (!Number.isFinite(height) || height < 120 || height > 230) throw new RangeError('身長は120〜230cmで入力してください。');
   if (!Number.isFinite(weight) || weight < 30 || weight > 220) throw new RangeError('体重は30〜220kgで入力してください。');
   const bmi = weight / (height / 100) ** 2;
-  // For a fictional 160 cm woman, scale reference circumferences by sqrt(BMI/22).
-  // Reference values (U72/W64/H90) are creative choices, not population averages.
-  const factor = Math.sqrt(bmi / 22);
-  const underbust = 72 * factor;
+  // User-defined creative baseline, not a medical or population standard.
+  const referenceWeight = height - 110;
+  const weightDelta = weight - referenceWeight;
+  const relativeDeviation = Math.abs(weightDelta) / referenceWeight;
+  // Smooth bounded penalty: zero at reference, strictly increasing on either side.
+  const penalty = relativeDeviation / (1 + relativeDeviation);
+  const lighter = weightDelta < 0;
+  // Underweight reduces bust/hip volume without rewarding a tiny waist.
+  // Overweight increases waist faster than bust/hip. Both reduce waist definition.
+  const underbust = 72 + (lighter ? -16 : 40) * penalty;
+  const waist = 64 + (lighter ? 36 : 64) * penalty;
+  const hip = 90 + (lighter ? -24 : 40) * penalty;
   const selected = cupFor(height, mode);
   return {
-    height, weight, bmi, cup: selected.cup,
+    height, weight, bmi, referenceWeight, weightDelta, relativeDeviation, penalty, cup: selected.cup,
     alternateCup: cupFor(height, mode === 'image1' ? 'image2' : 'image1').cup,
     underbust,
     bust: [underbust + selected.diff[0], selected.diff[1] === null ? null : underbust + selected.diff[1]],
-    waist: 64 * factor,
-    hip: 90 * factor,
+    waist,
+    hip,
     diff: selected.diff,
   };
 }

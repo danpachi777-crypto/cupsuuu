@@ -41,7 +41,7 @@
         <div class="field weight-field">
           <label for="weight">体重 <span>WEIGHT</span></label>
           <div class="number-box"><input id="weight" name="weight" type="number" inputmode="decimal" value="72" min="30" max="220" step="0.1" required aria-describedby="weight-help form-error"><span>kg</span></div>
-          <p class="field-help" id="weight-help">体重は3サイズの換算に反映されます。</p>
+          <p class="field-help" id="weight-help">身長−110kgを基準に、軽くても重くても体型が変化します。</p>
         </div>
         <fieldset class="standard"><legend>カップ数の基準 <span>REFERENCE</span></legend>
           <div class="segmented">
@@ -51,44 +51,30 @@
         </fieldset>
         <p id="form-error" class="form-error" role="alert" hidden></p>
         <button class="convert-button" type="submit">スタイルを換算する <span aria-hidden="true">↗</span></button>
-        <p class="privacy"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="9" height="7" rx="2" stroke="currentColor"/><path d="M5.5 7V4.5a2.5 2.5 0 0 1 5 0V7" stroke="currentColor"/></svg>入力内容の保存・送信はしません</p>
+        <p class="privacy"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="9" height="7" rx="2" stroke="currentColor"/><path d="M5.5 7V4.5a2.5 2.5 0 0 1 5 0V7" stroke="currentColor"/></svg>入力内容はブラウザー内だけで処理します</p>
       </form>
 
-      <section id="result" class="result-panel" aria-labelledby="result-title" tabindex="-1">
-        <div class="result-top"><h2 id="result-title">YOUR STYLE, SWAPPED.</h2><span class="result-tag" id="result-reference">画像1の基準</span></div>
-        <p class="result-source" id="result-source">181cm / 72kg を換算すると</p>
-        <div class="cup-main"><span class="cup-number" id="cup">E</span><div class="cup-label"><span>CUP</span><span>カップ相当</span></div><span class="result-spark" aria-hidden="true">✳</span></div>
-        <div class="result-rule"><span>女性の身長160cmを想定</span><span>独自の体型モデル</span></div>
-        <div class="measurements" aria-label="換算した3サイズの目安">
-          <div class="measurement"><span class="measure-name">BUST <span>バスト</span></span><div><strong id="bust">92.0</strong><span class="unit">cm</span></div><span class="measure-line bust-line" aria-hidden="true"></span></div>
-          <div class="measurement"><span class="measure-name">WAIST <span>ウエスト</span></span><div><strong id="waist">64.0</strong><span class="unit">cm</span></div><span class="measure-line waist-line" aria-hidden="true"></span></div>
-          <div class="measurement"><span class="measure-name">HIP <span>ヒップ</span></span><div><strong id="hip">90.0</strong><span class="unit">cm</span></div><span class="measure-line hip-line" aria-hidden="true"></span></div>
-        </div>
-        <div class="result-detail"><span>アンダーバスト <strong id="underbust">72.0cm</strong></span><span>BMI <strong id="bmi">22.0</strong></span></div>
-        <p class="other-standard" id="other-standard">ちなみに、画像2の基準では <strong>Fカップ</strong></p>
-        <button class="copy-button" id="copy-result" type="button"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="9" height="10" rx="1.5" stroke="currentColor"/><path d="M12 7V4.5A1.5 1.5 0 0 0 10.5 3h-6A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13H7" stroke="currentColor"/></svg><span id="copy-label">結果をコピー</span></button>
-        <p class="result-disclaimer">3サイズは独自ルールによるイメージ値です。<br>実在する身体の寸法や魅力を判定するものではありません。</p>
-      </section>
     </section>
     <p id="live-status" class="sr-only" role="status" aria-live="polite"></p>
-    <div id="copy-fallback" class="copy-fallback" hidden><label for="copy-text">結果の文章を選択してコピーしてください</label><textarea id="copy-text" rows="4" readonly></textarea></div>
-    <p class="calculator-caption"><span class="caption-dot"></span><span>初期値は181cm・72kgの入力例。数字や基準を変えると、結果がリアルタイムで変わります。</span></p>
-
+    <p class="calculator-caption"><span class="caption-dot"></span><span>換算ボタンを押すと、顔写真付きの結果を次のページに表示します。</span></p>
+    <div class="loading-screen" id="loading-screen" hidden role="status" aria-live="polite" aria-label="換算中">
+      <div class="loading-content"><span class="loading-symbol" aria-hidden="true">s↗</span><p class="loading-eyebrow">STYLE SWAP</p><h2>もうひとつのスタイルに、換算中。</h2><p>3サイズと、有名人の参考例を準備しています</p><div class="loading-track" aria-hidden="true"><span></span></div></div>
+    </div>
     <section id="method" class="method-section" aria-labelledby="method-title">
       <div class="section-head"><div><p class="eyebrow">BEHIND THE NUMBERS</p><h2 id="method-title">どうやって換算しているの？</h2></div><span class="section-index" aria-hidden="true">02 / ABOUT</span></div>
       <div class="method-grid">
         <article><span class="method-icon" aria-hidden="true">↕</span><h3>身長 → カップ数</h3><p>2枚の参考画像の対応表を使用。区切りの身長以上で、そのカップ数に切り替わります。体重でカップ数は変わりません。</p></article>
-        <article><span class="method-icon" aria-hidden="true">⌁</span><h3>体格 → 3サイズ</h3><p>身長と体重からBMIを計算。女性の身長160cmを想定し、体格に応じたアンダーバスト・ウエスト・ヒップを独自に設定します。</p></article>
+        <article><span class="method-icon" aria-hidden="true">⌁</span><h3>体格 → 3サイズ</h3><p>男性の基準体重は「身長−110kg」。女性160cmの基準体型から、軽い側・重い側のどちらも体重差に応じてくびれが弱まる独自ルールです。</p></article>
         <article><span class="method-icon" aria-hidden="true">✳</span><h3>気軽に楽しむ、数字の置き換え</h3><p>画像の表に、3サイズのルールを足した遊びのツールです。科学的な換算や、スタイルの良さを測る診断ではありません。</p></article>
       </div>
       <details class="reference-details"><summary><span>2枚の対応表と、計算ルールを見る</span><span class="expand-mark" aria-hidden="true">+</span></summary>
         <div class="details-body">
           <div class="table-scroll"><table><caption>参考画像のカップ数対応表</caption><thead><tr><th scope="col">男性の身長</th><th scope="col">画像1の基準</th><th scope="col">画像2の基準</th></tr></thead><tbody id="reference-rows"></tbody></table></div>
-          <div class="formula"><h3>3サイズの独自ルール</h3><p>女性の身長は160cm固定。基準はBMI 22で、アンダーバスト72cm・ウエスト64cm・ヒップ90cmとしています。これらは試作用に決めた値で、平均値や理想値ではありません。</p><code>体格係数 = √（入力したBMI ÷ 22）<br>アンダーバスト = 72 × 体格係数<br>ウエスト = 64 × 体格係数<br>ヒップ = 90 × 体格係数<br>バスト = アンダーバスト ＋ カップに対応する差</code><p>トップとアンダーの差はAA 7.5cm、A 10cm、B 12.5cm、C 15cm、D 17.5cm、E 20cm、F 22.5cm、G 25cm、H 27.5cmとして計算。画像2の「B〜C」は範囲、「G〜」は下限を表示します。表示は小数1桁に丸めています。</p><p class="source-note">画像2の「割合」は出典・集計条件が確認できないため使用していません。入力範囲：身長120〜230cm、体重30〜220kg。BMIは計算用の参考値で、筋肉量や健康状態を評価しません。</p></div>
+          <div class="formula"><h3>3サイズの独自ルール</h3><p>女性の身長は160cm固定。男性の基準体重を「身長−110kg」とし、その体重でアンダーバスト72cm・ウエスト64cm・ヒップ90cmになります。ご指定の基準を使った遊びの体型モデルで、健康や実際の魅力を評価する基準ではありません。</p><code>基準体重 = 男性の身長 − 110<br>体重差 = 入力体重 − 基準体重<br>ずれ率 = |体重差| ÷ 基準体重<br>補正係数 p = ずれ率 ÷ (1 ＋ ずれ率)<br><br>基準より軽い場合：<br>アンダーバスト = 72 − 16p<br>ウエスト = 64 ＋ 36p<br>ヒップ = 90 − 24p<br><br>基準以上の場合：<br>アンダーバスト = 72 ＋ 40p<br>ウエスト = 64 ＋ 64p<br>ヒップ = 90 ＋ 40p<br><br>バスト = アンダーバスト ＋ カップに対応する差</code><p>基準より軽い場合は胸・ヒップのボリュームが減り、ウエストは細くなりません。重い場合はウエストが胸・ヒップより速く増えます。どちらも基準から離れるほどウエスト／ヒップ比が上がり、くびれが弱まります。変化は連続的で、極端な入力で寸法が発散しないよう補正係数を0〜1未満に収めています。</p><p>トップとアンダーの差はAA 7.5cm、A 10cm、B 12.5cm、C 15cm、D 17.5cm、E 20cm、F 22.5cm、G 25cm、H 27.5cmとして計算。画像2の「B〜C」は範囲、「G〜」は下限を表示します。表示は小数1桁に丸めています。</p><p class="source-note">画像2の「割合」は出典・集計条件が確認できないため使用していません。入力範囲：身長120〜230cm、体重30〜220kg。BMIは参考表示のみで、3サイズの計算には使用しません。</p></div>
         </div>
       </details>
     </section>
   </main>
-  <footer class="wrap site-footer"><a class="brand footer-brand" href="./"><span class="brand-icon" aria-hidden="true">s↗</span> STYLE SWAP</a><p>A LITTLE CURIOSITY. A DIFFERENT YOU.</p><span>つくりながら、考える。 v0.1</span></footer>
+  <footer class="wrap site-footer"><a class="brand footer-brand" href="./"><span class="brand-icon" aria-hidden="true">s↗</span> STYLE SWAP</a><p>A LITTLE CURIOSITY. A DIFFERENT YOU.</p><span>つくりながら、考える。 v0.2</span></footer>
 </body>
 </html>

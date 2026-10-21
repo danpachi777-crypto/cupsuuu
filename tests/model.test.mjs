@@ -11,7 +11,7 @@ test('reference image 2: ranges from the source stay ranges', () => {
   for(const [height,cup] of cases) assert.equal(cupFor(height,'image2').cup,cup,`${height}cm`);
 });
 test('181 cm uses the selected image; weight changes dimensions and preserves cup', () => {
-  const example = calculate(181,72);
+  const example = calculate(181,71);
   assert.equal(example.cup,'E');
   assert.equal(example.alternateCup,'F');
   assert.equal(formatBust(example.bust),'92.0');
@@ -22,10 +22,10 @@ test('181 cm uses the selected image; weight changes dimensions and preserves cu
   assert.ok(heavier.bust[0] > example.bust[0]);
   assert.ok(heavier.waist > example.waist);
   assert.ok(heavier.hip > example.hip);
-  assert.equal(calculate(181,72,'image2').cup,'F');
+  assert.equal(calculate(181,71,'image2').cup,'F');
 });
 test('cup difference and range formatting remain consistent', () => {
-  const exact = calculate(160,56.32);
+  const exact = calculate(160,50);
   assert.ok(Math.abs(exact.underbust - 72) < 0.00001);
   assert.equal(formatBust(exact.bust),'82.0');
   const range = calculate(165,60,'image2');
@@ -37,4 +37,36 @@ test('cup difference and range formatting remain consistent', () => {
 });
 test('invalid measurements do not produce output', () => {
   for(const args of [[0,72],[-181,72],[NaN,72],[181,NaN],[181,0],[181,-72],[119.9,72],[230.1,72],[181,29.9],[181,220.1]]) assert.throws(()=>calculate(...args),RangeError);
+});
+
+test('180 cm / 30 kg does not get a tiny waist; 70 kg is the exact baseline', () => {
+  const baseline = calculate(180,70);
+  const lighter = calculate(180,30);
+  assert.equal(baseline.referenceWeight,70);
+  assert.equal(baseline.weightDelta,0);
+  assert.equal(baseline.waist,64);
+  assert.equal(baseline.hip,90);
+  assert.equal(baseline.bust[0],92);
+  assert.equal(lighter.cup,baseline.cup);
+  assert.ok(lighter.waist > baseline.waist);
+  assert.ok(lighter.hip < baseline.hip);
+  assert.ok(lighter.bust[0] < baseline.bust[0]);
+});
+
+test('waist definition worsens continuously away from reference on both sides across all heights', () => {
+  for (let height = 120; height <= 230; height++) {
+    const reference = height - 110;
+    for (const direction of [-1,1]) {
+      let previous = calculate(height,reference < 30 ? 30 : reference);
+      let start = reference < 30 ? 31 : reference + 1;
+      if(direction < 0) start = reference - 1;
+      for(let weight = start; weight >= 30 && weight <= 220; weight += direction) {
+        const next = calculate(height,weight);
+        assert.ok(next.waist / next.hip > previous.waist / previous.hip, `${height}cm ${weight}kg W/H`);
+        assert.ok(next.waist / next.bust[0] > previous.waist / previous.bust[0], `${height}cm ${weight}kg W/B`);
+        assert.ok([next.waist,next.hip,next.underbust,...next.bust].every(n => Number.isFinite(n) && n > 0));
+        previous = next;
+      }
+    }
+  }
 });

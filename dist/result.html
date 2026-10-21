@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="robots" content="noindex">
+  <title>あなたの換算結果 — STYLE SWAP</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./result.mjs"></script>
+</head>
+<body class="result-page">
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="STYLE SWAP ホーム"><span class="brand-icon" aria-hidden="true">s↗</span> STYLE SWAP<span class="beta">BETA</span></a>
+    <a class="header-link back-input" href="./index.html">← 入力を変える</a>
+  </header>
+  <main class="wrap">
+    <section id="result-error" class="result-error" hidden role="alert"><h1>入力を確認してください</h1><p>身長と体重を入力して、スタイルを換算してください。</p><a class="return-button" href="./index.html">入力画面へ戻る ↗</a></section>
+    <div id="result-content" hidden>
+      <div class="result-page-heading"><p class="eyebrow"><span></span> YOUR RESULT</p><h1>もうひとつの、あなたのスタイル。</h1><p id="input-summary"></p></div>
+      <div class="result-layout">
+        <section id="result" class="result-panel" aria-labelledby="result-title" tabindex="-1">
+          <div class="result-top"><h2 id="result-title">YOUR STYLE, SWAPPED.</h2><span class="result-tag" id="result-reference"></span></div>
+          <p class="result-source" id="result-source"></p>
+          <div class="cup-main"><span class="cup-number" id="cup"></span><div class="cup-label"><span>CUP</span><span>カップ相当</span></div><span class="result-spark" aria-hidden="true">✳</span></div>
+          <div class="result-rule"><span>女性の身長160cmを想定</span><span>独自の体型モデル</span></div>
+          <div class="measurements" aria-label="換算した3サイズの目安">
+            <div class="measurement"><span class="measure-name">BUST <span>バスト</span></span><div><strong id="bust"></strong><span class="unit">cm</span></div><span class="measure-line" aria-hidden="true"></span></div>
+            <div class="measurement"><span class="measure-name">WAIST <span>ウエスト</span></span><div><strong id="waist"></strong><span class="unit">cm</span></div><span class="measure-line waist-line" aria-hidden="true"></span></div>
+            <div class="measurement"><span class="measure-name">HIP <span>ヒップ</span></span><div><strong id="hip"></strong><span class="unit">cm</span></div><span class="measure-line hip-line" aria-hidden="true"></span></div>
+          </div>
+          <div class="result-detail"><span>アンダーバスト <strong id="underbust"></strong></span><span>BMI <strong id="bmi"></strong></span></div>
+          <p class="weight-reference" id="weight-reference"></p>
+          <p class="other-standard" id="other-standard"></p>
+          <button class="copy-button" id="copy-result" type="button"><span id="copy-label">結果をコピー</span></button>
+          <p class="result-disclaimer">3サイズは独自ルールによるイメージ値です。<br>実在する身体の寸法や魅力を判定するものではありません。</p>
+        </section>
+        <section class="celebrity-results" aria-labelledby="celebrity-title">
+          <p class="eyebrow"><span></span> FAMILIAR FACES</p>
+          <h2 id="celebrity-title">あなたの結果に近い有名人。</h2>
+          <p class="celebrity-results-intro">公表B・W・Hを比較し、登録者の中から近い順に15名を表示します。サイズ差が大きい人も、予想の参考候補として掲載します。</p>
+          <p id="reference-message" class="reference-message"></p>
+          <div class="candidate-section-heading"><h3 id="matching-heading">近い有名人</h3><span>MATCHES</span></div>
+          <p id="matching-empty" class="matching-empty" hidden>今回の結果に近い公表3サイズの人は、登録中の有名人にはいません。人数を合わせるための候補は表示していません。</p>
+          <div id="celebrity-matches" class="portrait-matches featured-matches"></div>
+          <section id="more-matches-section" hidden><div class="candidate-section-heading"><h3>ほかの参考候補 10名</h3><span>MORE MATCHES</span></div>
+          <div id="celebrity-more" class="portrait-matches more-matches"></div></section>
+          <details class="celebrity-catalog reference-details"><summary>写真付きの有名人一覧を見る（<span id="catalog-count"></span>名）<span class="expand-mark" aria-hidden="true">+</span></summary><div class="catalog-body"><p class="catalog-note">登録プロフィールの一覧です。今回の結果に近くない人も含みます。結果候補とは別に、写真・カップ数・サイズを確認できます。</p><div id="celebrity-catalog" class="portrait-matches more-matches"></div></div></details>
+          <section class="comedy-reference" aria-labelledby="comedy-reference-title"><div class="candidate-section-heading"><h3 id="comedy-reference-title">お笑いタレントの参考例</h3><span>ANOTHER REFERENCE</span></div><p>こちらは別枠で、体型の数値を比較できます。</p><div id="celebrity-comedy" class="portrait-matches comedy-matches"></div></section>
+          <details class="reference-details celebrity-explanation"><summary>比較の基準・写真と数値の出典 <span class="expand-mark" aria-hidden="true">+</span></summary>
+            <div class="explanation-body"><p>成人の女性有名人のうち、登録済みの女優・モデル・グラビアなどを公表B・W・Hとの絶対差で比較します。近さの基準を満たす人を優先し、最もずれた部位の差が小さい順、同じ場合は平均差が小さい順に並べます。先頭5名を大きく表示し、続く10名も参考候補として表示します。全員のプロフィールは別の折りたたみ一覧から閲覧できます。お笑いタレント2名は別枠で表示します。</p><p>バストが範囲の場合は範囲内との差を0とし、身長は比較に含めません。差の平均が3cm以内、B・W・Hそれぞれの差が5cm以内の両方を満たす場合だけ「3サイズが近い候補」と表示します。それ以外も「予想の参考候補・サイズ差あり」と明示して表示します。予想は登録者内での数値比較に基づき、本人の未公表サイズを推測するものではありません。カップ数・見た目・現在の体型の一致を示すものではありません。</p><p>各人のカップ数は公表・取材記事の掲載値のみを記載し、写真や3サイズから推測しません。確認できる公表資料がない場合は「公表値未確認」と表示します。カップ数が同じでも、アンダーバストや3サイズは異なります。</p><p>数値は事務所・出版社・人物情報サイトなどの公開資料によります。過去の数値を含み、カップ数・3サイズ・写真の時期が一致しない場合があります。各カードでそれぞれの出典を確認できます。確認日：2026年10月21日。</p></div>
+          </details>
+        </section>
+      </div>
+      <div class="result-actions"><a class="return-button back-input" href="./index.html">← 入力を変えて、もう一度</a><p>身長の対応表と体重の補正ルールは、入力画面の「換算のしくみ」で確認できます。</p></div>
+      <div id="copy-fallback" class="copy-fallback" hidden><label for="copy-text">結果の文章を選択してコピーしてください</label><textarea id="copy-text" rows="4" readonly></textarea></div>
+    </div>
+    <p id="live-status" class="sr-only" role="status" aria-live="polite"></p>
+    <noscript><p>換算結果を表示するにはJavaScriptを有効にしてください。</p><a href="./index.html">入力画面へ戻る</a></noscript>
+  </main>
+  <footer class="wrap site-footer"><a class="brand footer-brand" href="./"><span class="brand-icon" aria-hidden="true">s↗</span> STYLE SWAP</a><p>A LITTLE CURIOSITY. A DIFFERENT YOU.</p><span>つくりながら、考える。 v0.2</span></footer>
+</body>
+</html>

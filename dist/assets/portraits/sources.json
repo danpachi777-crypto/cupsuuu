@@ -1,0 +1,179 @@
+{
+  "nanao": {
+    "image": "./assets/portraits/nanao.jpg",
+    "imageSource": "https://unq.co.jp/profile/nanao/",
+    "originalImage": "https://unq.co.jp/_wp/wp-content/uploads/2024/06/Cut1_0096-683x1024.jpg",
+    "bytes": 136642
+  },
+  "kumada": {
+    "image": "./assets/portraits/kumada.jpg",
+    "imageSource": "https://www.pyramid.tokyo/kumada-yoko/",
+    "originalImage": "https://www.pyramid.tokyo/wp-content/uploads/2019/01/e1553682830425.jpg",
+    "bytes": 19227
+  },
+  "isoyama": {
+    "image": "./assets/portraits/isoyama.jpg",
+    "imageSource": "https://www.lifika.com/sayaka-isoyama",
+    "originalImage": "https://static.wixstatic.com/media/ba581a_43209ee2f29a4df4978c13bcec83c940~mv2.jpg",
+    "bytes": 768821
+  },
+  "sano": {
+    "image": "./assets/portraits/sano.jpg",
+    "imageSource": "https://www.horipro.co.jp/sanohinako/",
+    "originalImage": "https://www.horipro.co.jp/wp-content/uploads/sites/71/2019/03/sano.jpg",
+    "bytes": 79593
+  },
+  "okubo": {
+    "image": "./assets/portraits/okubo.jpg",
+    "imageSource": "https://ranking.net/items/6accb2",
+    "originalImage": "https://img.ranking.net/uploads/item/image/ae/af/0f/default_2000038237.jpg?v=1697546397",
+    "bytes": 17699
+  },
+  "mochida": {
+    "image": "./assets/portraits/mochida.jpg",
+    "imageSource": "https://www.shochikugeino.co.jp/talents/%E9%A4%85%E7%94%B0%E3%82%B3%E3%82%B7%E3%83%92%E3%82%AB%E3%83%AA/",
+    "originalImage": "https://www.shochikugeino.co.jp/wp-content/uploads/2025/08/23111932/%E2%98%85%E3%80%90%E9%A4%85%E7%94%B0%E3%82%B3%E3%82%B7%E3%83%92%E3%82%AB%E3%83%AA%E3%80%91%E5%AE%A3%E6%9D%90%E5%86%99%E7%9C%9F-e1779502804278-500x500.jpg",
+    "bytes": 36269
+  },
+  "yanagi": {
+    "image": "./assets/portraits/yanagi.png",
+    "imageSource": "https://animoproduce.co.jp/artists/yanagiyurina/",
+    "originalImage": "https://animoproduce.co.jp/wp/wp-content/uploads/2021/06/%E6%9F%B3%E3%82%86%E3%82%8A%E8%8F%9C2-600x869_%E3%83%A1%E3%82%A4%E3%83%B3-2.png",
+    "bytes": 665448
+  },
+  "tomaru": {
+    "image": "./assets/portraits/tomaru.jpg",
+    "imageSource": "https://platinumproduction.jp/talent/tomarusayaka/",
+    "originalImage": "https://platinumproduction.jp/wp-content/uploads/2024/01/%E9%83%BD%E4%B8%B8%E7%B4%97%E4%B9%9F%E8%8F%AF.jpg",
+    "bytes": 346692
+  },
+  "inoue": {
+    "image": "./assets/portraits/inoue.jpg",
+    "imageSource": "https://incent.jp/incent/talent/inoue/",
+    "originalImage": "https://incent.jp/incent/talent/inoue/top.jpg",
+    "bytes": 87856
+  },
+  "hashimoto": {
+    "image": "./assets/portraits/hashimoto.jpg",
+    "imageSource": "https://irving.co.jp/talents/manami-hashimoto/",
+    "originalImage": "https://irving.co.jp/talents/wp-content/uploads/sites/3/2022/11/manami_hashimoto_800px01.jpg",
+    "bytes": 217304
+  },
+  "dan": {
+    "image": "./assets/portraits/dan.jpg",
+    "imageSource": "https://www.danmitsu.jp/",
+    "originalImage": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/2446238/48f96435ea1a101a9391c80f65aeac35_5e273b0de46f266b2b692e12364b5d9c.jpg",
+    "bytes": 96745
+  },
+  "yoshiki": {
+    "image": "./assets/portraits/yoshiki.jpg",
+    "imageSource": "https://columbia.jp/artist-info/yoshikirisa/prof.html",
+    "originalImage": "https://columbia.jp/artist-info/photo/yoshikirisa05.jpg",
+    "bytes": 168143
+  },
+  "sugihara": {
+    "image": "./assets/portraits/sugihara.jpg",
+    "imageSource": "https://gravidia.jp/model/177/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/products/product_cover_09D050000000d0000000.jpg",
+    "bytes": 282614
+  },
+  "suzuki": {
+    "image": "./assets/portraits/suzuki.jpg",
+    "imageSource": "https://www.office-pocket.com/profile.html",
+    "originalImage": "https://www.office-pocket.com/uploads/1/1/8/9/118944651/editor/suzuki-fumina-36.jpg?1523242558",
+    "bytes": 83503
+  },
+  "hara": {
+    "image": "./assets/portraits/hara.jpg",
+    "imageSource": "https://viivo.co.jp/talent/haramikie/",
+    "originalImage": "https://viivo.co.jp/admin/wp-content/uploads/2025/03/746843b37a5cf05710d52879b4396899-scaled.jpeg",
+    "bytes": 248574
+  },
+  "konno": {
+    "image": "./assets/portraits/konno.jpg",
+    "imageSource": "https://trustar.co.jp/talents/anna-konno/",
+    "originalImage": "https://trustar.co.jp/wp-content/uploads/2021/01/S__111222807.jpg",
+    "bytes": 143656
+  },
+  "kishi": {
+    "image": "./assets/portraits/kishi.jpg",
+    "imageSource": "https://www.stardust.co.jp/talent/section3/kishiasuka/",
+    "originalImage": "https://www.stardust.co.jp/wp-content/uploads/2022/05/kishiasuka_sen01-1-367x550.jpg",
+    "bytes": 170740
+  },
+  "gravidia-394": {
+    "image": "./assets/portraits/gravidia-394.jpg",
+    "imageSource": "https://gravidia.jp/model/394/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/products/product_cover_09D052270000d0000000.jpg"
+  },
+  "gravidia-379": {
+    "image": "./assets/portraits/gravidia-379.jpg",
+    "imageSource": "https://kirinpro.co.jp/cmspro/18621",
+    "originalImage": "https://kirinpro.co.jp/cmspro/wp-content/themes/standard_black_cmspro/img/58d2efcc2c4573456bd638d63fa83a2f-230x337.jpg"
+  },
+  "gravidia-335": {
+    "image": "./assets/portraits/gravidia-335.jpg",
+    "imageSource": "https://gravidia.jp/model/335/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2026/07/09D180770000d0000000.jpg"
+  },
+  "gravidia-1516": {
+    "image": "./assets/portraits/gravidia-1516.jpg",
+    "imageSource": "https://gravidia.jp/model/1516/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2022/10/09D113760000d0000000.jpg"
+  },
+  "gravidia-444": {
+    "image": "./assets/portraits/gravidia-444.jpg",
+    "imageSource": "https://gravidia.jp/model/444/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/products/product_cover_09D065150000d0000000.jpg"
+  },
+  "gravidia-294": {
+    "image": "./assets/portraits/gravidia-294.jpg",
+    "imageSource": "https://gravidia.jp/model/294/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2024/12/09D153500000d0000000.jpg"
+  },
+  "gravidia-359": {
+    "image": "./assets/portraits/gravidia-359.jpg",
+    "imageSource": "https://gravidia.jp/model/359/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2023/01/09D118960000d0000000.jpg"
+  },
+  "gravidia-189": {
+    "image": "./assets/portraits/gravidia-189.jpg",
+    "imageSource": "https://gravidia.jp/model/189/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/products/product_cover_09D078900000d0000000.jpg"
+  },
+  "gravidia-578": {
+    "image": "./assets/portraits/gravidia-578.jpg",
+    "imageSource": "https://gravidia.jp/model/578/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2025/08/09D164700000d0000000.jpg"
+  },
+  "gravidia-305": {
+    "image": "./assets/portraits/gravidia-305.jpg",
+    "imageSource": "https://gravidia.jp/model/305/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2022/04/09D103640000d0000000.jpg"
+  },
+  "gravidia-218": {
+    "image": "./assets/portraits/gravidia-218.jpg",
+    "imageSource": "https://gravidia.jp/model/218/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2022/09/09D109310000d0000000.jpg"
+  },
+  "gravidia-211": {
+    "image": "./assets/portraits/gravidia-211.jpg",
+    "imageSource": "https://gravidia.jp/model/211/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/products/product_cover_09D081890000d0000000.jpg"
+  },
+  "gravidia-185": {
+    "image": "./assets/portraits/gravidia-185.jpg",
+    "imageSource": "https://gravidia.jp/model/185/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2024/06/09D144460000d0000000.jpg"
+  },
+  "gravidia-309": {
+    "image": "./assets/portraits/gravidia-309.jpg",
+    "imageSource": "https://gravidia.jp/model/309/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2023/12/09D134900000d0000000.jpg"
+  },
+  "gravidia-191": {
+    "image": "./assets/portraits/gravidia-191.jpg",
+    "imageSource": "https://gravidia.jp/model/191/",
+    "originalImage": "https://gravidia.jp/wp-content/uploads/2022/07/09D108150000d0000000.jpg"
+  }
+}
